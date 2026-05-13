@@ -572,45 +572,27 @@ button {
   margin-top: 24px;
   color: var(--orange-hot);
   font-weight: 800;
-  transition: color 200ms ease, text-shadow 200ms ease, transform 200ms ease;
-}
-
-.text-link::after {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -7px;
-  height: 2px;
-  content: "";
-  background: linear-gradient(90deg, var(--orange), var(--neon), transparent);
-  transform: scaleX(0.35);
-  transform-origin: left;
-  transition: transform 260ms ease;
+  text-shadow: 0 0 12px rgba(255, 106, 0, 0.36);
+  transition: color 180ms ease, transform 180ms ease;
 }
 
 .text-link i {
-  transition: transform 220ms ease;
+  transition: transform 180ms ease;
 }
 
 .text-link:hover,
 .text-link:focus-visible {
   color: #ffd39b;
-  text-shadow: 0 0 18px rgba(255, 106, 0, 0.72);
-  transform: translateY(-1px);
-}
-
-.text-link:hover::after,
-.text-link:focus-visible::after {
-  transform: scaleX(1);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .text-link:hover i,
 .text-link:focus-visible i {
-  transform: translateX(5px);
+  transform: translateX(6px);
 }
 
 .animated-link {
-  animation: linkGlow 2.4s ease-in-out infinite;
+  animation: linkGlow 1.9s ease-in-out infinite;
 }
 
 .feature-grid,
@@ -1140,10 +1122,10 @@ body.js-ready .reveal.is-visible {
 @keyframes linkGlow {
   0%,
   100% {
-    text-shadow: 0 0 10px rgba(255, 106, 0, 0.24);
+    text-shadow: 0 0 10px rgba(255, 106, 0, 0.34);
   }
   50% {
-    text-shadow: 0 0 22px rgba(255, 106, 0, 0.74), 0 0 12px rgba(22, 245, 180, 0.22);
+    text-shadow: 0 0 22px rgba(255, 106, 0, 0.82), 0 0 12px rgba(22, 245, 180, 0.24);
   }
 }
 
