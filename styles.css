@@ -537,6 +537,8 @@ button {
 }
 
 .product-stack img {
+  --stack-y: 0px;
+  --stack-rotate: 0deg;
   position: relative;
   z-index: 1;
   width: min(210%, 330px);
@@ -545,23 +547,36 @@ button {
   justify-self: center;
   object-fit: contain;
   filter: drop-shadow(0 22px 30px rgba(0, 0, 0, 0.48));
-  transition: transform 300ms ease;
+  animation: productShake 2.8s ease-in-out infinite;
+  transition: width 240ms ease;
+}
+
+.product-stack img:nth-child(1) {
+  width: min(225%, 350px);
+  animation-delay: -0.35s;
 }
 
 .product-stack img:nth-child(2) {
-  transform: translateY(-24px);
+  --stack-y: -24px;
+  animation-delay: -0.9s;
+}
+
+.product-stack img:nth-child(3) {
+  animation-delay: -1.45s;
 }
 
 .product-stack:hover img:nth-child(1) {
-  transform: translateY(-8px) rotate(-2deg);
+  --stack-y: -8px;
+  --stack-rotate: -2deg;
 }
 
 .product-stack:hover img:nth-child(2) {
-  transform: translateY(-36px);
+  --stack-y: -36px;
 }
 
 .product-stack:hover img:nth-child(3) {
-  transform: translateY(-8px) rotate(2deg);
+  --stack-y: -8px;
+  --stack-rotate: 2deg;
 }
 
 .text-link {
@@ -1119,6 +1134,22 @@ body.js-ready .reveal.is-visible {
   }
 }
 
+@keyframes productShake {
+  0%,
+  100% {
+    transform: translate(0, var(--stack-y)) rotate(var(--stack-rotate));
+  }
+  25% {
+    transform: translate(1.4px, calc(var(--stack-y) - 1px)) rotate(calc(var(--stack-rotate) + 0.5deg));
+  }
+  50% {
+    transform: translate(-1px, calc(var(--stack-y) + 0.7px)) rotate(calc(var(--stack-rotate) - 0.45deg));
+  }
+  75% {
+    transform: translate(0.8px, calc(var(--stack-y) - 0.6px)) rotate(calc(var(--stack-rotate) + 0.25deg));
+  }
+}
+
 @keyframes linkGlow {
   0%,
   100% {
@@ -1307,6 +1338,10 @@ body.js-ready .reveal.is-visible {
   .product-stack img {
     width: 210%;
     max-height: 320px;
+  }
+
+  .product-stack img:nth-child(1) {
+    width: 225%;
   }
 }
 
