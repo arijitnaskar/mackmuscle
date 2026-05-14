@@ -552,7 +552,7 @@ button {
 }
 
 .product-stack img:nth-child(1) {
-  width: min(225%, 350px);
+  width: min(300%, 400px);
   animation-delay: -0.35s;
 }
 
