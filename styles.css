@@ -897,6 +897,77 @@ button {
   border-radius: 6px;
 }
 
+.price-tag {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  margin-top: 18px;
+  padding: 11px 14px 11px 18px;
+  overflow: hidden;
+  color: #080808;
+  background: linear-gradient(135deg, var(--orange), var(--orange-hot));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  box-shadow: 0 12px 28px rgba(255, 106, 0, 0.25);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.price-tag::before {
+  position: absolute;
+  top: 50%;
+  left: 7px;
+  width: 6px;
+  height: 6px;
+  content: "";
+  background: rgba(8, 8, 8, 0.78);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.price-tag span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 3px 7px;
+  color: var(--text);
+  background: rgba(8, 8, 8, 0.72);
+  border-radius: 5px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.price-tag strong {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.price-tag small {
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.price-tag-split {
+  display: flex;
+  max-width: 100%;
+}
+
+.price-tag-split div {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.product-card:hover .price-tag {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(255, 106, 0, 0.36), 0 0 20px rgba(255, 157, 0, 0.18);
+}
+
 .contact-section {
   padding-bottom: 44px;
 }
